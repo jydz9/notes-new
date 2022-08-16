@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-app.use(cors())
+
 
 let notes = [
     {
@@ -47,6 +47,7 @@ const requestLogger = (request, response, next) => {
 
 app.use(express.json())
 app.use(requestLogger)
+app.use(cors())
 app.use(express.static('build'))
 
 // app.get('/',(request,response) => {
